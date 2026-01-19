@@ -9,3 +9,8 @@ def home():
   # return render_template("index.html", name="Joe")
   # and we access them in html by using double curly braces {{}}
 #
+@views.route("/profile")
+def profile():
+  args = request.args
+  name = args.get('name')
+  return render_template("index.html", name=name)
